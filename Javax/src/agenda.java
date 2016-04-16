@@ -90,7 +90,7 @@ public class agenda {
         int opt = 0;
         do {
             printConsole("Meniul principal:"); //l-am facut pe orizontala pentru ca imi ocupa prea mult din consola
-            printConsole("1-Afisarea persoane / 2-Adaugare persoana / 3-Cautare nume ");
+            printConsole("1-Afisarea persoane / 2-Adaugare persoana / 3-Cautare nume 4-Modificare nume 5-Stergere ");
             printConsole("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
             opt = readIntConsole("Alegeti optiunea dorita:");
@@ -207,33 +207,33 @@ public class agenda {
         return r;
     }
 
-//    //MODIFICARE NUME IN AGENDA
-//    public static void modificare(String nume) {
-//        int index = cautare(nume); //indexul numelui de modificat
-//        if (index == -1) {
-//            printConsole("Numele " + nume + " nu exista in agenda!");
-//        } else {
-//            String numeModif = readStringConsole("Introduceti numele dorit: ");
-//            sirNume[index] = numeModif;  //inlocuim numele de la indexul respectiv cu numele nou
-//            printConsole("Nume modificat cu succes. Verificati prin afisare.");
-//        }
-//        System.out.println();
-//    }
+   // MODIFICARE NUME IN AGENDA
+    public static void modificare(String nume) {
+        int index = cautare(nume); //indexul numelui de modificat
+        if (index == -1) {
+            printConsole("Numele " + nume + " nu exista in agenda!");
+        } else {
+            String n = readStringConsole("Introduceti numele dorit: ");
+            listaPersoane[index].setName(n);  //inlocuim numele de la indexul respectiv cu numele nou
+            printConsole("Nume modificat cu succes. Verificati prin afisare.");
+        }
+        System.out.println();
+    }
 
-//    //STERGERE NUME
-//    public static void stergere(String nume) {
-//        int index = cautare(nume); //indexul numelui de sters
-//        if (index == -1) {
-//            System.out.println();
-//            printConsole("Numele " + nume + " nu exista in agenda!");
-//            System.out.println();
-//        }
-//        else {
-//            sirNume[index] = null;
-//            printConsole("Nume sters cu succes. Verificati prin afisare.");
-//        }
-//        System.out.println();
-//    }
+  //  STERGERE NUME
+    public static void stergere(String nume) {
+        int index = cautare(nume); //indexul numelui de sters
+        if (index == -1) {
+            System.out.println();
+            printConsole("Numele " + nume + " nu exista in agenda!");
+            System.out.println();
+        }
+        else {
+            listaPersoane[index] = null;
+            printConsole("Nume sters cu succes. Verificati prin afisare.");
+        }
+        System.out.println();
+    }
 
 
 }
